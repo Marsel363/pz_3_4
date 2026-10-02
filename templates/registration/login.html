@@ -1,22 +1,42 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Вход</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<h1>Вход в систему</h1>
+{% block title %}
+Вход
+{% endblock %}
 
-<form method="post">
-    {% csrf_token %}
+{% block content %}
 
-    {{ form.as_p }}
+<div class="row justify-content-center">
 
-    <button type="submit">
-        Войти
-    </button>
-</form>
-</body>
+    <div class="col-md-5">
 
-</html>
+        <div class="card">
+
+            <div class="card-body">
+
+                <h2 class="card-title mb-4">
+                    Вход в систему
+                </h2>
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button class="btn btn-primary"
+                            type="submit">
+                        Войти
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
